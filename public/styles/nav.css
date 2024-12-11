@@ -6,20 +6,20 @@ nav {
   justify-content: space-between;
   background-color: #4056A1;
   color: #FFFFFF;
+  padding: 1.5em;
 }
 
-span {
+.nav-title {
   font-family: "Bungee", sans-serif;
-  padding: 1.5em;
 }
 
 .right-text {
   display: flex;
+  margin-left: auto;
   flex-direction: column;
   align-items: center;
-  margin-left: auto;
 }
 
 .arrows {
-  color: red;
+  color: #eb0a0a;
 }
