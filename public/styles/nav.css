@@ -15,11 +15,10 @@ nav {
 
 .nav-tweet-btn {
   display: flex;
-  margin-left: auto;
   flex-direction: column;
   align-items: center;
 }
 
-.arrows {
+.icon-color {
   color: #eb0a0a;
 }
