@@ -1,0 +1,21 @@
+header {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  background-color: #f6ae2b;
+  align-items: center;
+  background-image: url('/images/texture.png');
+/* This is mostly intended for prototyping; please download the pattern and re-host for production environments. Thank you! */
+}
+
+.avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.user-name {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
