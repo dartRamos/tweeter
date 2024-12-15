@@ -23,6 +23,10 @@ textarea {
   font-family: "Bungee", sans-serif;
 }
 
+.counter-negative {
+  color: red;
+}
+
 button {
   color: white;
   padding: 10px 20px;

@@ -1,6 +1,6 @@
 $(document).ready(function() {
   // Select the textarea inside the .new-tweet section
-  $('.new-tweet textarea').on('input', function() {
+  $('.new-tweet textarea').on('keyup', function() {
     
     // Get current length of text entered
     let textLength = $(this).val().length;
@@ -16,11 +16,10 @@ $(document).ready(function() {
 
     // Turns counter red if number goes below 0
     if(remainingChars < 0) {
-      counter.css('color', 'red');
+      counter.addClass('counter-negative');
     } else {
-      counter.css('color', 'black');
+      counter.removeClass('counter-negative');
     }
 
-    console.log(remainingChars);
   });
 });
