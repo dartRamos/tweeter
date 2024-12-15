@@ -1,6 +1,6 @@
-label {
+.new-tweet {
   display: flex;
-  font-weight: bold;
+  flex-direction: column;
 }
 
 textarea {
@@ -8,10 +8,12 @@ textarea {
   border: none;
   outline: none;
   width: 100%;
+  border-bottom: solid;
+  padding-bottom: 0px;
 }
 
-textarea {
-  border-bottom: solid;
+textarea::placeholder {
+  font-weight: bold;
 }
 
 .submit-and-counter {
