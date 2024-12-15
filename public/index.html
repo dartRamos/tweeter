@@ -22,6 +22,9 @@
     <!-- Header CSS -->
     <link rel="stylesheet" href="/styles/header.css" type="text/css" />
 
+    <!-- New Tweet CSS -->
+    <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
+
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
@@ -32,30 +35,47 @@
   <body>
     <!-- Top nav bar (fixed) -->
     <nav>
+
       <span class="nav-title">tweeter</span>
       <span class="nav-tweet-btn">
-        <span class="tweet-text">Write a new tweet</span>
+        <span class="tweet-text"><span class="bold-word">Write</span> a new tweet</span>
         <i class="fa-solid fa-angles-down icon-color"></i>
       </span>
+
     </nav>
 
     <!-- Header below the nav bar -->
     <header>
+
       <div class="avatar">
         <img src="/images/profile-hex.png">
       </div>
+      
       <br>
+      
       <div class="user-name">
         <h2>Your Name</h2>
       </div>
+
     </header>
 
     <!-- Page-specific (main) content here -->
     <main class="container">
-      <h1>Temporary Heading</h1>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse rerum dicta sunt quasi? Delectus quae soluta perferendis beatae obcaecati dolorum dignissimos placeat voluptatibus, dicta hic, voluptas provident explicabo laboriosam veritatis!Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse rerum dicta sunt quasi? Delectus quae soluta perferendis beatae obcaecati dolorum dignissimos placeat voluptatibus, dicta hic, voluptas provident explicabo laboriosam veritatis!</p>
-      <h2>Temporary Heading 2</h2>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse rerum dicta sunt quasi? Delectus quae soluta perferendis beatae obcaecati dolorum dignissimos placeat voluptatibus, dicta hic, voluptas provident explicabo laboriosam veritatis!Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse rerum dicta sunt quasi? Delectus quae soluta perferendis beatae obcaecati dolorum dignissimos placeat voluptatibus, dicta hic, voluptas provident explicabo laboriosam veritatis!</p>
+      
+      <section class="new-tweet">
+        <h2>Compose Tweet</h2>
+        <form action="/tweets/" method="POST">
+          <label for="tweet-text">What are you humming about?</label>
+          <textarea name="text" id="tweet-text"></textarea>
+          <div class="submit-and-counter">
+            <button type="submit">Tweet</button>
+            <output name="counter" class="counter" for="tweet-text">140</output>
+          </div>
+        </form>
+      
+      </section>
+    
     </main>
+
   </body>
 </html>

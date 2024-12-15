@@ -1,0 +1,26 @@
+label {
+  display: flex;
+  font-weight: bold;
+}
+
+textarea {
+  background: transparent;
+  border: none;
+  outline: none;
+  width: 100%;
+}
+
+textarea {
+  border-bottom: solid;
+}
+
+.submit-and-counter {
+  display: flex;
+  justify-content: space-between;
+  font-family: "Bungee", sans-serif;
+}
+
+button {
+  color: white;
+  background-color: #4056A1;
+}
