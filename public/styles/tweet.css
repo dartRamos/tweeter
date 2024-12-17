@@ -15,22 +15,11 @@ article .tweet-header {
   justify-content: space-between;
   margin-bottom: 50px;
   font-weight: lighter;
-}
+} 
 
 .user-tag {
   color: #CDCDCD;
   font-weight: normal;
-}
-
-.tweet-container {
-  display: flex;
-  flex-direction: column;
-  margin: 60px 0;
-}
-
-article {
-  border: 3px solid black;
-  padding: 20px;
 }
 
 .the-tweet {
@@ -50,9 +39,10 @@ article {
 
 .tweet-icons i {
   margin-right: 10px;
+  color: #4056A1;
 }
 
-article:hover {
+.tweet-container:hover {
   box-shadow: 10px 10px #CDCDCD;
 }
 
