@@ -25,6 +25,9 @@
     <!-- New Tweet CSS -->
     <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
 
+    <!-- Tweet Container CSS -->
+    <link rel="stylesheet" href="/styles/tweet-container.css" type="text/css" />
+
     <!-- External JS -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
@@ -50,7 +53,7 @@
     </nav>
 
     <!-- Header below the nav bar -->
-    <header>
+    <header class="user-profile-header">
 
       <div class="avatar">
         <img src="/images/profile-hex.png">
@@ -64,22 +67,67 @@
 
     </header>
 
-    <!-- Page-specific (main) content here -->
+    <!-- Main content area -->
     <main class="container">
-      
+    
+      <!-- Section for composing a new tweet -->
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
+    
+        <!-- Form for submitting the tweet -->
         <form action="/tweets/" method="POST">
+      
+          <!-- Label for the tweet textarea -->
           <label for="tweet-text" class="tweet-label">What are you humming about?</label>
+      
+          <!-- Textarea for tweet input -->
           <textarea name="text" id="tweet-text"></textarea>
+      
+          <!-- Div containing the submit button and character counter -->
           <div class="submit-and-counter">
             <button type="submit">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
-        </form>
       
+        </form>
       </section>
+  
+      <!-- Section for displaying a tweet -->
+      <section class="tweet-container">
     
+        <!-- Article for a single tweet -->
+        <article>
+      
+          <!-- Header for the tweet (could be user info) -->
+          <header class="tweet-header">
+            User Name
+            
+            <!-- Div for the users @ -->
+            <div class="user-tag">@Dro</div>
+          </header>
+      
+          <!-- The tweet text -->
+          <p class="the-tweet">This is a Tweet!</p>
+      
+          <!-- Divider line separating content -->
+          <div class="line"></div>
+      
+          <!-- Footer for time posted and tweet actions -->
+          <footer class="tweet-footer">
+            time posted
+        
+            <!-- Footer for the tweet actions/icons -->
+            <footer class="tweet-icons">
+              <i class="fa-solid fa-flag flag"></i>
+              <i class="fa-solid fa-retweet retweet"></i>
+              <i class="fa-solid fa-heart heart"></i>
+            </footer>
+          </footer>
+      
+        </article>
+    
+      </section>
+  
     </main>
 
   </body>

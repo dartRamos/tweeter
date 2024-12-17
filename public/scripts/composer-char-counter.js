@@ -14,10 +14,12 @@ $(document).ready(function() {
     // Update the counter text with the remaining characters
     counter.text(remainingChars);
 
-    // Turns counter red if number goes below 0
+    // If remaining characters are less than 0
     if(remainingChars < 0) {
+       // Add the 'counter-negative' class to change color.
       counter.addClass('counter-negative');
     } else {
+      // If the number isn't negative remove 'counter-negative' class.
       counter.removeClass('counter-negative');
     }
 

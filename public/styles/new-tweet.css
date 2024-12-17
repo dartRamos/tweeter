@@ -1,12 +1,15 @@
+/* Style for the .new-tweet container */
 .new-tweet {
   display: flex;
-  flex-direction: column;
+  flex-direction: column; /* Stacks the children vertically */
 }
 
+/* Style for the tweet label (the text above the textarea) */
 .tweet-label {
   font-weight: bold;
 }
 
+/* Style for the textarea */
 textarea {
   background: transparent;
   border: none;
@@ -17,16 +20,19 @@ textarea {
   margin: 10px 0;
 }
 
+/* Style for the submit and counter section (button and counter) */
 .submit-and-counter {
   display: flex;
   justify-content: space-between;
   font-family: "Bungee", sans-serif;
 }
 
+/* Style for the counter when the character limit is exceeded */
 .counter-negative {
   color: red;
 }
 
+/* Style for the submit button */
 button {
   color: white;
   padding: 10px 20px;
@@ -36,6 +42,7 @@ button {
   cursor: pointer;
 }
 
+/* Hover effect for the button */
 button:hover {
   background-color: #304E91;
 }

@@ -1,3 +1,4 @@
+/* Style for the navigation bar (nav) */
 nav {
   position: fixed;
   display: flex;
@@ -12,10 +13,12 @@ nav {
   padding: 0 1.5em;
 }
 
+/* Style for the navigation title */
 .nav-title {
   font-family: "Bungee", sans-serif;
 }
 
+/* Style for the navigation tweet button container */
 .nav-tweet-btn {
   display: flex;
   flex-direction: column;
@@ -23,10 +26,12 @@ nav {
   font-size: 30px;
 }
 
+/* Style for the bold text */
 .bold-word {
   font-weight: bold;
 }
 
+/* Style for the icon color */
 .icon-color {
   color: #eb0a0a;
 }

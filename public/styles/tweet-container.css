@@ -1,0 +1,73 @@
+.tweet-container {
+  display: flex;
+  flex-direction: column;
+  margin: 60px 0;
+}
+
+article {
+  border: 3px solid black;
+  padding: 20px;
+}
+
+/* Style for the tweet header specifically within an article */
+article .tweet-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 50px;
+  font-weight: lighter;
+}
+
+.user-tag {
+  color: #CDCDCD;
+  font-weight: normal;
+}
+
+.tweet-container {
+  display: flex;
+  flex-direction: column;
+  margin: 60px 0;
+}
+
+article {
+  border: 3px solid black;
+  padding: 20px;
+}
+
+.the-tweet {
+  margin-top: 10px;
+}
+
+.line {
+  border-top: solid;
+  margin: 10px 0;
+}
+
+.tweet-footer {
+  display: flex;
+  justify-content: space-between;
+  font-size: 17px;
+}
+
+.tweet-icons i {
+  margin-right: 10px;
+}
+
+article:hover {
+  box-shadow: 10px 10px #CDCDCD;
+}
+
+.flag:hover {
+  cursor: pointer;
+  color: #f6ae2b;
+}
+
+.retweet:hover {
+  cursor: pointer;
+  color: #f6ae2b;
+}
+
+.heart:hover {
+  cursor: pointer;
+  color: #f6ae2b;
+}
+

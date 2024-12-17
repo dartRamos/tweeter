@@ -14,7 +14,7 @@ html {
  * Global layout stuff
  */
 
- body {
+body {
   background-color: cornsilk;
   font-size: 24px;
   font-family: 'Source Sans 3', sans-serif;
@@ -26,6 +26,7 @@ html {
  * Additional CSS can be defined below or in other CSS files, as per instructions
  */
 
+ /* Style for the main container */
 main {
   display: flex;
   width: 90%;
