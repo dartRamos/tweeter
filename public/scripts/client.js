@@ -37,7 +37,7 @@ $(document).ready(function() {
     tweets.forEach(tweet => {
       const $tweet = createTweetElement(tweet);
 
-      $('#tweets-container').append($tweet);
+      $('#tweets-container').prepend($tweet);
     })
   }
 
@@ -72,7 +72,22 @@ $(document).ready(function() {
       return $tweet; // Return the created tweet element to be appended to the page
   }
 
-  // Call renderTweets function with the data array to display tweets on page load
+  // Function to handle the form submission 
+  const submitHandler = function() {
+    // Attach a 'submit' event listener to the form with id 'target'
+    $('#target').on("submit", function(event) {
+      event.preventDefault(); // Prevent the default form submission behavior (page refresh)
+
+      // Serialize the form data into a query string format
+      const tweetData = $(this).serialize();
+      console.log(tweetData);
+    });
+  }
+
+  // Activate the submitHandler function to listen for form submission events
+  submitHandler();
+
+  // Render the initial tweets on the page
   renderTweets(data);
 });
 

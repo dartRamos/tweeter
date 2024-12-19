@@ -75,7 +75,7 @@
         <h2>Compose Tweet</h2>
     
         <!-- Form for submitting the tweet -->
-        <form action="/tweets/" method="POST">
+        <form id="target" action="/tweets/" method="POST">
       
           <!-- Label for the tweet textarea -->
           <label for="tweet-text" class="tweet-label">What are you humming about?</label>
@@ -85,7 +85,7 @@
       
           <!-- Div containing the submit button and character counter -->
           <div class="submit-and-counter">
-            <button type="submit">Tweet</button>
+            <button type="submit" class="submit-button">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
           </div>
       
