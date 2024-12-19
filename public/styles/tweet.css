@@ -4,22 +4,28 @@
   margin: 60px 0;
 }
 
-article {
+.tweet {
   border: 3px solid black;
   padding: 20px;
+  margin-top: 60px;
 }
 
 /* Style for the tweet header specifically within an article */
-article .tweet-header {
+.tweet-header {
   display: flex;
   justify-content: space-between;
   margin-bottom: 50px;
   font-weight: lighter;
 } 
 
-.user-tag {
+.user-avatar {
   color: #CDCDCD;
   font-weight: normal;
+  display: flex;
+}
+
+.user-avatar img {
+  margin-right: 10px ;
 }
 
 .the-tweet {
@@ -42,21 +48,11 @@ article .tweet-header {
   color: #4056A1;
 }
 
-.tweet-container:hover {
+.tweet:hover {
   box-shadow: 10px 10px #CDCDCD;
 }
 
-.flag:hover {
-  cursor: pointer;
-  color: #f6ae2b;
-}
-
-.retweet:hover {
-  cursor: pointer;
-  color: #f6ae2b;
-}
-
-.heart:hover {
+.flag:hover, .retweet:hover, .heart:hover {
   cursor: pointer;
   color: #f6ae2b;
 }
