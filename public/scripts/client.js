@@ -47,6 +47,21 @@ $(document).ready(function() {
       return $tweet; // Return the created tweet element to be appended to the page
   }
 
+  const isTweetValid = function (tweetWords) {
+    tweetWords = tweetWords.trim()
+
+    if(tweetWords.length > 140) {
+      alert('You have exceeded the character limit!');
+      return false;
+    }
+
+    if(!tweetWords) {
+      alert('You cannot submit a blank tweet!')
+      return false;
+    }
+
+    return true;
+  }
   // Function to handle the form submission 
   const submitHandler = function() {
     $('#target').on("submit", function(event) {
@@ -55,13 +70,7 @@ $(document).ready(function() {
       const tweetData = $(this).serialize(); // Serialize the form data
       const tweetWords = $('#tweet-text').val();
 
-      if(tweetWords.length > 140) {
-        alert('You have exceeded the character limit!');
-        return;
-      }
-
-      if(!tweetWords) {
-        alert('You cannot submit a blank tweet!')
+      if(!isTweetValid(tweetWords)) {
         return;
       }
 
