@@ -51,8 +51,20 @@ $(document).ready(function() {
   const submitHandler = function() {
     $('#target').on("submit", function(event) {
       event.preventDefault(); // Prevent the default form submission behavior
+      
       const tweetData = $(this).serialize(); // Serialize the form data
-   
+      const tweetWords = $('#tweet-text').val();
+
+      if(tweetWords.length > 140) {
+        alert('You have exceeded the character limit!');
+        return;
+      }
+
+      if(!tweetWords) {
+        alert('You cannot submit a blank tweet!')
+        return;
+      }
+
       $.post('/tweets', tweetData, function(response) {
         console.log('Server Response:', response); // Log the response to inspect it
         renderTweets([response]); // Append the newly created tweet to the container
@@ -77,7 +89,7 @@ $(document).ready(function() {
 
   // Loads tweets when page loads
   loadTweets();
-  
+
   // Activate the submitHandler function to listen for form submission events
   submitHandler();
 });
