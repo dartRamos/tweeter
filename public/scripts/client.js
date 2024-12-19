@@ -7,6 +7,9 @@ $(document).ready(function() {
   // Function to render the array of tweets
   const renderTweets = function(tweets) {
     // For each tweet in the 'tweets' array, create the tweet element and append it to the page
+
+    $("#tweets-container").empty();
+
     tweets.forEach(tweet => {
       const $tweet = createTweetElement(tweet);
 
@@ -16,13 +19,16 @@ $(document).ready(function() {
 
   // Function that creats the HTML structure for a tweet
   const createTweetElement = function(tweet) {
+    if(!tweet.user) {
+      return "Not found";
+    }
     // Formate creation time suing timeago.js
-    const timeAgo = timeago.format(new Date(tweet.created_at));
+    const timeAgo = timeago.format(tweet.created_at);
       // Using jQuery to create an HTML structure for the tweet
       let $tweet = $(`<article class="tweet">
         <header class="tweet-header">
           <div class="user-avatar">
-            <img src="${tweet.user.avatars}" alt="User Avatar">
+            <img src=${tweet.user.avatars} alt="profile picture">
             <span class="user-name">${tweet.user.name}</span>
           </div>
           <div class="user-info">
@@ -43,18 +49,23 @@ $(document).ready(function() {
         </footer>    
       </article>`
       )
+      console.log(tweet);
 
       return $tweet; // Return the created tweet element to be appended to the page
   }
 
+  // Fucntion to validate tweet 
   const isTweetValid = function (tweetWords) {
+    // Trim any leading or trailing spaces from tweet
     tweetWords = tweetWords.trim()
 
+    // Checks if tweet exceeds character limit
     if(tweetWords.length > 140) {
       alert('You have exceeded the character limit!');
       return false;
     }
 
+    // Checks if tweet is blank
     if(!tweetWords) {
       alert('You cannot submit a blank tweet!')
       return false;
@@ -62,21 +73,22 @@ $(document).ready(function() {
 
     return true;
   }
+
   // Function to handle the form submission 
   const submitHandler = function() {
     $('#target').on("submit", function(event) {
       event.preventDefault(); // Prevent the default form submission behavior
       
       const tweetData = $(this).serialize(); // Serialize the form data
-      const tweetWords = $('#tweet-text').val();
+      const tweetWords = $('#tweet-text').val(); // Get the tweet content
 
       if(!isTweetValid(tweetWords)) {
         return;
       }
 
       $.post('/tweets', tweetData, function(response) {
-        console.log('Server Response:', response); // Log the response to inspect it
-        renderTweets([response]); // Append the newly created tweet to the container
+        loadTweets();
+        //renderTweets([response]); // Append the newly created tweet to the container
       });
     });
   }
@@ -91,8 +103,12 @@ $(document).ready(function() {
         renderTweets(response)
       },
       error: function() {
-        console.log('Error fetrching tweets:', err); // Logs error if something goes wrong
-      }
+        console.log('Error fetching tweets:', err); // Logs error if something goes wrong
+      },
+      success: function(response) {
+        console.log(response); // Check the structure of tweets
+        renderTweets(response);
+      },
     })
   }
 
