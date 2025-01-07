@@ -46,3 +46,19 @@ button {
 button:hover {
   background-color: #304E91;
 }
+
+/* Stle for warning message */
+#error-messages {
+  color: white;
+  background-color: red;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 25px;
+  text-align: center;
+  margin-top: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.hidden {
+  display: none;
+}

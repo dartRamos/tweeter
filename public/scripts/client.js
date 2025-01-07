@@ -61,13 +61,15 @@ $(document).ready(function() {
 
     // Checks if tweet exceeds character limit
     if(tweetWords.length > 140) {
-      alert('You have exceeded the character limit!');
+      $('#error-messages').text('You have exceeded the character limit!'); // Set error message
+      $('#error-messages').slideDown(); // Show the error message with slideDown animation
       return false;
     }
 
     // Checks if tweet is blank
-    if(!tweetWords) {
-      alert('You cannot submit a blank tweet!')
+    if (!tweetWords) {
+      $('#error-messages').text('You cannot submit a blank tweet!'); // Set error message
+      $('#error-messages').slideDown(); // Show the error message with slideDown animation
       return false;
     }
 
@@ -88,7 +90,7 @@ $(document).ready(function() {
 
       $.post('/tweets', tweetData, function(response) {
         loadTweets();
-        //renderTweets([response]); // Append the newly created tweet to the container
+        $('#error-messages').slideUp(); // Hide error message after successful submission
       });
     });
   }
@@ -99,10 +101,7 @@ $(document).ready(function() {
       url: '/tweets', // Endpoint to request tweets from
       method: 'GET', // method to fetch data
       dataType: 'JSON', // Get a JSON response from server
-      success: function(response) {
-        renderTweets(response)
-      },
-      error: function() {
+      error: function(err) {
         console.log('Error fetching tweets:', err); // Logs error if something goes wrong
       },
       success: function(response) {
