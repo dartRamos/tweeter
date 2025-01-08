@@ -15,6 +15,7 @@ html {
  */
 
 body {
+  display: flex;
   background-color: cornsilk;
   font-size: 24px;
   font-family: 'Source Sans 3', sans-serif;
@@ -30,9 +31,20 @@ body {
 main {
   display: flex;
   width: 90%;
+  height: 450px;
   flex-direction: column;
   justify-content: space-evenly;
-  align-content: stretch;
   background-color: cornsilk;
-  margin: 0 auto;
+  padding-left: 300px;
+  padding-right: 50px;
+  padding-top: 75px;
  }
+
+
+@media only screen and (max-width: 1024px) {
+
+  main {
+    margin-top: 350px;
+    padding-left: 0;
+  }
+}

@@ -90,7 +90,7 @@ $(document).ready(function() {
 
       $.post('/tweets', tweetData, function(response) {
         loadTweets();
-        $('#error-messages').slideUp(); // Hide error message after successful submission
+        $('#error-messages').slideUp(500); // Hide error message after successful submission
       });
     });
   }
