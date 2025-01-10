@@ -17,6 +17,12 @@ $(document).ready(function() {
     })
   }
 
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
   // Function that creats the HTML structure for a tweet
   const createTweetElement = function(tweet) {
     if(!tweet.user) {
@@ -36,7 +42,7 @@ $(document).ready(function() {
           </div>
         </header>
         <section class="the-tweet">
-          ${tweet.content.text}
+          ${escape(tweet.content.text)}
         </section>
         <div class="line"></div>
         <footer class="tweet-footer">
@@ -49,10 +55,9 @@ $(document).ready(function() {
         </footer>    
       </article>`
       )
-      console.log(tweet);
 
       return $tweet; // Return the created tweet element to be appended to the page
-  }
+  };
 
   // Fucntion to validate tweet 
   const isTweetValid = function (tweetWords) {
@@ -90,9 +95,14 @@ $(document).ready(function() {
 
       $.post('/tweets', tweetData, function(response) {
         loadTweets();
+
+        // Clears tweet
+        $('#tweet-text').val('');
+
         $('#error-messages').slideUp(500); // Hide error message after successful submission
       });
     });
+
   }
 
   // Function to load tweets from server when the page loads
